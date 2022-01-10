@@ -1,7 +1,7 @@
 {
-  "name": "webpackapp",
+  "name": "youtubeplay",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "A web app to list the YouTube videos from a specific channel or playlist",
   "author": "Kelly Savoy <kelly.savoy@mercatus.com>",
   "private": true,
   "scripts": {
@@ -10,6 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "dotenv": "^10.0.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"

@@ -15,7 +15,7 @@
         <a :href="getVideoUrl()"
           target="_blank"
           class="watch-link">Watch</a>
-        <div v-text="publishedAt" />
+        <div v-text="moment( publishedAt ).format( 'MMM D, YYYY \@ h:mma' )" />
       </div>
     </div>
   </div>

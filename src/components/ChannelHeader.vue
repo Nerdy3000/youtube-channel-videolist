@@ -7,38 +7,44 @@
               channel.brandingSettings.image &&
               channel.brandingSettings.image.bannerExternalUrl"
           :style="{ backgroundImage: 'url(' + channel.brandingSettings.image.bannerExternalUrl + ')' }"></div>
+
+        <router-link class="btn-close"
+            :to="{ name: 'Channel' }"
+            title="Select a different channel">
+          &times;
+        </router-link>
       </div>
       <div v-if="channel.snippet"
         class="channel-details">
         <div v-if="channel.snippet.thumbnails &&
             channel.snippet.thumbnails.default"
             class="channel-logo-wrapper">
-            <a href="#"
-                @click="gotoPlaylistSelection()"
+          <router-link
+                :to="{ name: 'ChannelPlaylists', params: { channelId: channel.id } }"
                 title="Go to Playlist Selection">
-              <div class="channel-logo"
-                :style="{ backgroundImage: 'url(' + channel.snippet.thumbnails.default.url + ')' }"></div>
-            </a>
+            <div class="channel-logo"
+              :style="{ backgroundImage: 'url(' + channel.snippet.thumbnails.default.url + ')' }"></div>
+          </router-link>
         </div>
         <div class="channel-title">
           <h2>
-            <a href="#"
-                @click="gotoPlaylistSelection()"
+            <router-link
+                :to="{ name: 'ChannelPlaylists', params: { channelId: channel.id } }"
                 title="Go to Playlist Selection"
                 v-text="channel.snippet.title" />
             <small>
-              <a href="#"
-                @click="gotoChannelEntry"
-                title="Select a different channel">
+              <router-link
+                  :to="{ name: 'Channel' }"
+                  title="Select a different channel">
                 (change)
-              </a>
+              </router-link>
             </small>
           </h2>
         </div>
         <div class="channel-youtube-link">
           <a :href="`https://www.youtube.com/channel/${channel.id}`"
-                target="_blank"
-                title="Go to YouTube Channel">
+              target="_blank"
+              title="Go to YouTube Channel">
             <img src="../assets/img/youtube.svg" />
           </a>
         </div>
@@ -78,6 +84,7 @@ export default {
   $text-color: #2c3e50;
 
 .channel-background {
+  position: relative;
   height: 100px;
 
   & > .channel-background-image {
@@ -85,6 +92,19 @@ export default {
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% auto;
+  }
+
+  & > a.btn-close {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 2em;
+    line-height: 1em;
+    padding: 0 0.3em;
+    text-shadow: 0px 0px 5px #000000;
   }
 }
 

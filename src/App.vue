@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <div class="wrapper">
-      <router-view/>
+      <div class="content">
+        <router-view/>
+      </div>
     </div>
   </div>
 </template>
@@ -13,21 +15,33 @@ export default {
 </script>
 
 <style lang="scss">
-$text-color: #2c3e50;
+  body {
+    padding: 0;
+    margin: 0;
+  }
 
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: $text-color;
-    margin-top: 60px;
+    color: #2c3e50;
+    margin: 0;
 
     & > .wrapper {
-      width: 100%;
-      max-width: 900px;
+      width: 900px;
+      max-width: calc( 100% - 40px );
       margin: 0 auto;
       padding: 20px;
+      background: #f1f1f1;
+
+      & > .content {
+        background: #fff;
+
+        .inner-content {
+          padding: 0 1em 1em 1em;
+        }
+      }
     }
   }
 </style>

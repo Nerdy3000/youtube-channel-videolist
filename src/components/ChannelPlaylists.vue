@@ -2,9 +2,11 @@
   <div class="channel-details">
     <div v-if="channel">
       <channel-header :channel="channel" />
-      <div v-if="playlists && playlists.length"
-          class="channel-playlists">
-        <playlist-item v-for="playlist in playlists" :key="playlist.id" :playlist="playlist" />
+      <div class="inner-content">
+        <div v-if="playlists && playlists.length"
+            class="channel-playlists">
+          <playlist-item v-for="playlist in playlists" :key="playlist.id" :playlist="playlist" />
+        </div>
       </div>
     </div>
   </div>
@@ -54,4 +56,19 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+
+.channel-playlists {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  align-content: space-between;
+  align-items: stretch;
+
+  & > .playlist {
+    width: calc( 33% - 1em );
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin: 0.5em;
+  }
+}
 </style>

@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <h1>Channel View all Videos</h1>
-    <router-view/>
+    <div class="wrapper">
+      <router-view/>
+    </div>
   </div>
 </template>
 
@@ -11,13 +12,22 @@ export default {
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+$text-color: #2c3e50;
+
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: $text-color;
+    margin-top: 60px;
+
+    & > .wrapper {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+  }
 </style>

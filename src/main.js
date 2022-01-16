@@ -3,6 +3,7 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router';
+import store from './store'
 import moment from 'moment';
 
 Vue.config.productionTip = false;
@@ -11,6 +12,7 @@ Vue.prototype.moment = moment;
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   components: { App },
   template: '<App/>'

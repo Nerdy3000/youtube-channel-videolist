@@ -1,21 +1,21 @@
 <template>
   <div class="video-item">
     <div>
-      <div v-if="thumbnails &&
-          thumbnails.medium &&
-          thumbnails.medium.url"
+      <div v-if="video.snippet.thumbnails &&
+          video.snippet.thumbnails.medium &&
+          video.snippet.thumbnails.medium.url"
           class="video-image">
         <a :href="getVideoUrl()"
           target="_blank">
-          <img :src="thumbnails.medium.url" />
+          <img :src="video.snippet.thumbnails.medium.url" />
         </a>
       </div>
       <div class="video-content">
-        <h3 v-text="title" />
+        <h3 v-text="video.snippet.title" />
         <a :href="getVideoUrl()"
           target="_blank"
           class="watch-link">Watch</a>
-        <div v-text="moment( publishedAt ).format( 'MMM D, YYYY \@ h:mma' )" />
+        <div v-text="moment( video.snippet.publishedAt ).format( 'MMM D, YYYY \@ h:mma' )" />
       </div>
     </div>
   </div>
@@ -26,18 +26,12 @@
 export default {
   name: 'VideoItem',
   props: [
-    'title',
-    'description',
-    'publishedAt',
-    'resourceId',
-    'thumbnails',
+    'video'
   ],
   methods: {
     getVideoUrl: function() {
-      return `https://www.youtube.com/watch?v=${this.resourceId.videoId}`;
+      return `https://www.youtube.com/watch?v=${this.video.snippet.resourceId.videoId}`;
     },
-  },
-  mounted() {
   },
 }
 </script>
@@ -47,6 +41,10 @@ export default {
   .video-item {
     & > div {
       display: flex;
+
+      @media screen and ( max-width: 500px ) {
+        display: block;
+      }
     }
 
     .video-image {
@@ -57,6 +55,11 @@ export default {
 
       img {
         width: 100%;
+      }
+
+      @media screen and ( max-width: 500px ) {
+        width: 100%;
+        max-width: 100%;
       }
     }
 

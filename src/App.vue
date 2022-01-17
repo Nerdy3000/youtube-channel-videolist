@@ -18,6 +18,7 @@ export default {
   body {
     padding: 0;
     margin: 0;
+    background: #f1f1f1;
   }
 
   #app {

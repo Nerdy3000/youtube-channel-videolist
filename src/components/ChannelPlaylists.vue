@@ -64,11 +64,24 @@ export default {
   align-content: space-between;
   align-items: stretch;
 
+  @media screen and ( max-width: 500px ) {
+    display: block;
+  }
+
   & > .playlist {
     width: calc( 33% - 1em );
     flex-grow: 0;
     flex-shrink: 0;
     margin: 0.5em;
+
+    @media screen and ( min-width: 501px ) and ( max-width: 700px ) {
+      width: calc( 50% - 1em );
+    }
+
+    @media screen and ( max-width: 500px ) {
+      width: 100%;
+      margin: 1em 0;
+    }
   }
 }
 </style>

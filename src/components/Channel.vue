@@ -68,8 +68,6 @@ export default {
 
 <style lang="scss" scoped>
 
-$youtube-red: #FF0000;
-
 .channel-entry {
   padding: 1em 1em 2em;
 
@@ -82,7 +80,7 @@ $youtube-red: #FF0000;
   }
 
   a {
-    color: $youtube-red;
+    color: $youtubeRedColor;
     font-weight: bold;
   }
 }
@@ -92,7 +90,7 @@ $youtube-red: #FF0000;
   justify-content: center;
   margin-bottom: 1em;
 
-  @media screen and ( max-width: 500px ) {
+  @media screen and ( max-width: $smallMaxSize ) {
     display: block;
   }
 
@@ -105,14 +103,14 @@ $youtube-red: #FF0000;
     margin: 0 0.2em;
     width: 250px;
 
-    @media screen and ( max-width: 500px ) {
+    @media screen and ( max-width: $smallMaxSize ) {
       width: 100%;
       margin: 0;
     }
 
     input[type=text] {
       padding: 0.2em;
-      border: 1px solid #ccc;
+      border: 1px solid lighten( $blackColor, 60% );
       font-size: 16px;
       width: 100%;
     }
@@ -124,8 +122,8 @@ $youtube-red: #FF0000;
 
   .btn {
     border: none;
-    background: $youtube-red;
-    color: #fff;
+    background: $youtubeRedColor;
+    color: $whiteColor;
     padding: 0.3em 1em;
     font-size: 1.3em;
     text-transform: uppercase;
@@ -133,7 +131,7 @@ $youtube-red: #FF0000;
     cursor: pointer;
 
     &:hover, &:focus, &:active {
-      background: darken( $youtube-red, 10% );
+      background: darken( $youtubeRedColor, 10% );
     }
   }
 }

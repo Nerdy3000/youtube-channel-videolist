@@ -53,7 +53,7 @@ export default {
     & > div {
       display: flex;
 
-      @media screen and ( max-width: 500px ) {
+      @media screen and ( max-width: $smallMaxSize ) {
         display: block;
       }
     }
@@ -68,7 +68,7 @@ export default {
         display: inline-block;
         position: relative;
         line-height: 0;
-        box-shadow: 5px 3px 10px -3px rgba( #000, 0.55 );
+        box-shadow: 5px 3px 10px -3px rgba( $blackColor, 0.55 );
 
         .thumbnail-overlay {
           display: block;
@@ -77,7 +77,7 @@ export default {
           left: 0;
           right: 0;
           bottom: 0;
-          background: rgba( #000, 0.6 );
+          background: rgba( $blackColor, 0.6 );
           opacity: 0;
 
           & > .icon-wrapper {
@@ -97,7 +97,7 @@ export default {
 
             & > .icon-wrapper {
               & > img {
-                animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+                animation: scale-up-center 0.4s cubic-bezier( 0.39, 0.575, 0.565, 1 ) both;
               }
             }
           }
@@ -109,7 +109,7 @@ export default {
         }
       }
 
-      @media screen and ( max-width: 500px ) {
+      @media screen and ( max-width: $smallMaxSize ) {
         width: 100%;
         max-width: 100%;
       }

@@ -26,7 +26,7 @@ export default {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: #2c3e50;
+    color: $textColor;
     margin: 0;
 
     & > .wrapper {
@@ -34,10 +34,10 @@ export default {
       max-width: calc( 100% - 40px );
       margin: 0 auto;
       padding: 20px;
-      background: #f1f1f1;
+      background: darken( $whiteColor, 5.49% );
 
       & > .content {
-        background: #fff;
+        background: $whiteColor;
 
         .inner-content {
           padding: 0 1em 1em 1em;

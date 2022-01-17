@@ -69,7 +69,7 @@ export default {
     position: relative;
     width: 100%;
     height: 150px;
-    box-shadow: 5px 3px 10px -3px rgba( #000, 0.55 );
+    box-shadow: 5px 3px 10px -3px rgba( $blackColor, 0.55 );
 
     .playlist-thumbnail-image {
       width: 100%;
@@ -77,7 +77,7 @@ export default {
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
-      background-color: #000;
+      background-color: $blackColor;
     }
 
     .playlist-video-count-overlay {
@@ -87,7 +87,7 @@ export default {
       right: 0;
       bottom: 0;
       z-index: 2;
-      background: rgba( #000, 0.6 );
+      background: rgba( $blackColor, 0.6 );
 
       .video-count {
         position: absolute;
@@ -95,7 +95,7 @@ export default {
         width: 100%;
         transform: translateY( -50% );
         text-align: center;
-        color: #fff;
+        color: $whiteColor;
 
         & > span {
           display: block;
@@ -119,7 +119,7 @@ export default {
       text-transform: uppercase;
       font-weight: bold;
       font-size: 0.8em;
-      color: #666;
+      color: lighten( $blackColor, 40% );
     }
   }
 </style>

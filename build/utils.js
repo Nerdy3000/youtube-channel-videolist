@@ -39,7 +39,15 @@ exports.cssLoaders = function (options) {
         options: Object.assign({}, loaderOptions, {
           sourceMap: options.sourceMap
         })
-      })
+      });
+      if (loader === 'sass') {
+        loaders.push({
+          loader: 'sass-resources-loader',
+          options: {
+            resources: './src/styles/resources.scss',
+          },
+        });
+      }
     }
 
     // Extract CSS when that option is specified

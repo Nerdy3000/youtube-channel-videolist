@@ -2,7 +2,7 @@
   "name": "youtube-channel-videolist",
   "version": "1.0.0",
   "description": "A web app to list the YouTube videos from a specific channel or playlist",
-  "author": "Kelly Savoy <kelly.savoy@mercatus.com>",
+  "author": "Kelly Savoy <nerdy3000@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
@@ -44,6 +44,7 @@
     "rimraf": "^2.6.0",
     "sass": "^1.47.0",
     "sass-loader": "^7.3.1",
+    "sass-resources-loader": "^2.2.4",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
     "uglifyjs-webpack-plugin": "^1.1.1",

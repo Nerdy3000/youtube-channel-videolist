@@ -81,7 +81,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-  $text-color: #2c3e50;
 
 .channel-background {
   position: relative;
@@ -100,11 +99,11 @@ export default {
     top: 0;
     right: 0;
     text-decoration: none;
-    color: #ffffff;
+    color: $whiteColor;
     font-size: 2em;
     line-height: 1em;
     padding: 0 0.3em;
-    text-shadow: 0px 0px 5px #000000;
+    text-shadow: 0px 0px 5px $blackColor;
   }
 }
 
@@ -117,7 +116,7 @@ export default {
     height: 88px;
     border-radius: 50%;
     transform: translateY( -30% );
-    box-shadow: 3px 3px 16px -5px rgba(0,0,0,0.6);
+    box-shadow: 3px 3px 16px -5px rgba( $blackColor, 0.6 );
     margin-right: 1em;
   }
 
@@ -132,12 +131,12 @@ export default {
     text-align: left;
 
     a {
-      color: $text-color;
+      color: $textColor;
       text-decoration: none;
     }
 
     small > a {
-      color: #666;
+      color: lighten( $blackColor, 40% );
       font-size: 0.6em;
       font-weight: normal;
     }

@@ -127,7 +127,7 @@ export default {
   font-size: 1.8em;
 
   .playlist-videocount {
-    color: #666;
+    color: lighten( $blackColor, 40% );
     font-size: normal;
   }
 }

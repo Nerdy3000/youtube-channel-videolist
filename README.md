@@ -1,4 +1,4 @@
-# youtubeplay
+# youtube-channel-videolist
 
 > A Vue.js project that I built to play around with YouTube playlists.
 
